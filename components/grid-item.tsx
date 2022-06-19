@@ -35,6 +35,7 @@ interface IWorkGridItem {
   id: string
   title: string
   thumbnail: StaticImageData
+  path?: string
 }
 
 export const WorkGridItem = ({
@@ -42,9 +43,10 @@ export const WorkGridItem = ({
   id,
   title,
   thumbnail,
+  path = 'works'
 }: IWorkGridItem) => (
   <Box w="100%" align="center">
-    <NextLink href={`/works/${id}`}>
+    <NextLink href={`/${path}/${id}`}>
       <LinkBox cursor="pointer">
         <Image
           src={thumbnail}

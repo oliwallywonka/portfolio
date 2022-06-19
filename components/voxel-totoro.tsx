@@ -26,7 +26,7 @@ const VoxelTotoro = () => {
   const [_controls, setControls] = useState()
 
   const handlewWindowResize = useCallback(() => {
-    const { current: container } = refContainer
+    const { current: container }: { current: any } = refContainer
     if (container && renderer) {
       const scW = container.clientWidth
       const scH = container.clientHeight
@@ -34,12 +34,12 @@ const VoxelTotoro = () => {
     }
   }, [renderer])
   useEffect(() => {
-    const { current: container } = refContainer
+    const { current: container }: { current: any } = refContainer
     if (container && !renderer) {
       const scW = container.clientWidth
       const scH = container.clientHeight
 
-      const renderer = new THREE.WebGLRenderer({
+      const renderer: any = new THREE.WebGLRenderer({
         antialias: true,
         alpha: true,
       })
@@ -52,7 +52,7 @@ const VoxelTotoro = () => {
       // 640 -> 240
       // 8   -> 6
       const scale = scH * 0.03 + 4.8
-      const camera = new THREE.OrthographicCamera(
+      const camera: any = new THREE.OrthographicCamera(
         -scale,
         scale,
         scale,
@@ -67,7 +67,7 @@ const VoxelTotoro = () => {
       const ambientLight = new THREE.AmbientLight(0xcccccc, 1)
       scene.add(ambientLight)
 
-      const controls = new OrbitControls(camera, renderer.domElement)
+      const controls: any = new OrbitControls(camera, renderer.domElement)
       controls.autoRotate = true
       controls.target = target
       setControls(controls)

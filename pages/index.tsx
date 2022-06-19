@@ -9,6 +9,7 @@ import Layout from "../components/layouts/article"
 import Section from "../components/section"
 import Paragraph from "../components/paragraph"
 import { BioSection, BioYear } from "../components/bio"
+import TechItem from "../components/tech-item"
 const Home: NextPage = () => {
   const imgSource = '/assets/armadillo.png';
   return (
@@ -54,8 +55,7 @@ const Home: NextPage = () => {
           </Heading>
           <Paragraph>
             {" "}
-            a sdgasdg asdgas dga sdga sdga sdga sdga sdg asdgasdgasdgaadga
-            sdgasdgasdgasd asg{" "}
+            My Name is Alex and {" "}
           </Paragraph>
           {/*<NextLink href='/works/inkdrop'>
           <Link>Inkdrop</Link>
@@ -74,15 +74,15 @@ const Home: NextPage = () => {
             Bio
           </Heading>
           <BioSection>
-            <BioYear>1995</BioYear>
-            Born in La Paz El Alto, Bolivia.
-          </BioSection>
-          <BioSection>
             <BioYear>2013</BioYear>
             Graduated from Adventista Franz Tamayo School
           </BioSection>
           <BioSection>
-            <BioYear>2022 to present</BioYear>
+            <BioYear>2018</BioYear>
+            Studing last year Engineer of Systems in Franz Tamayo University
+          </BioSection>
+          <BioSection>
+            <BioYear>2022</BioYear>
             Works as a freelance
           </BioSection>
         </Section>
@@ -90,7 +90,20 @@ const Home: NextPage = () => {
           <Heading as="h3" variant="section-title">
             Skills and Tools
           </Heading>
-          Angular, NestJS, MySql, Nextjs, GitHub, Docker.
+          <TechItem src="/assets/webicons/angular.svg" tech="Angular" />
+          <TechItem src="/assets/webicons/nestjs-icon.svg" tech="NestJS" />
+          <TechItem src="/assets/webicons/mysql.svg" tech="MySQL" />
+          <TechItem src="/assets/webicons/react-icon.svg" tech="NextJS" />
+          <TechItem src="/assets/webicons/github-icon.svg" tech="Github" />
+          <TechItem src="/assets/webicons/docker-tile.svg" tech="Docker" />
+        </Section>
+        <Section delay={0.4}>
+          <Heading as="h3" variant="section-title">
+            Languages
+          </Heading>
+          <Paragraph>
+            English (Basic), Español (Nativo)
+          </Paragraph>
         </Section>
         <Section delay={0.4}>
           <Heading as="h3" variant="section-title">

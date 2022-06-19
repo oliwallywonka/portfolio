@@ -4,15 +4,16 @@ import { ChevronRightIcon } from "@chakra-ui/icons"
 
 interface IChildren {
   children: React.ReactNode
+  pathType?: string
 }
 interface IImage {
   src: string
   alt: string
 }
-export const Title = ({ children }: IChildren) => (
+export const Title = ({ children, pathType = 'works' }: IChildren) => (
 
   <Box>
-    <NextLink href="/works">
+    <NextLink href={`/${pathType}`} passHref>
       <Link>Works</Link>
     </NextLink>
     <span>

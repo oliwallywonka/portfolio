@@ -1,28 +1,11 @@
-/*const nextConfig = {
-  reactStrictMode: true,
-  webpack(config) {
-    config.module.rules.push({
-      test: /\.svg$/i,
-      issuer: /\.[jt]sx?$/,
-      use: ["@svgr/webpack"],
-    })
+const withPlugins = require('next-compose-plugins')
 
-    return config
-  },
-  async redirects() {
-    return [
-      {
-        source: "/",
-        destination: "/",
-        permanent: false,
-      },
-    ]
-  },
-}
+// you may tweak other base Next options in this object
+// we are using it to tell Next to also handle .md and .mdx files
+const nextConfig = { pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'mdx', 'md'] }
 
-module.exports = nextConfig*/
-
-module.exports = {
-  reactStricMode: true,
-  swcMinify: true
-}
+module.exports = withPlugins(
+  [
+  ],
+  nextConfig
+)
